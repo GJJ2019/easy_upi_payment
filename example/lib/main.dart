@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
         ),
       );
 
-      print(transactionDetail.toString());
+      log(transactionDetail.toString());
     } on PlatformException catch (e) {
       log('exception is $e');
     } finally {
