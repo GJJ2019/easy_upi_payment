@@ -9,10 +9,10 @@ class EasyUpiPaymentModel {
     this.transactionRefId,
   });
 
-  /// It takes name of the payee like Gaurav Jajoo
+  /// It takes VPA address of payee for e.g. gaurav.jajoo@upi
   final String payeeVpa;
 
-  /// It takes VPA address of payee for e.g. gaurav.jajoo@upi
+  /// It takes name of the payee like Gaurav Jajoo
   final String payeeName;
 
   /// Payee Merchant code. This should be valid.
@@ -32,7 +32,7 @@ class EasyUpiPaymentModel {
 
   /// It takes the amount in String decimal format (xx.xx) to be paid.
   /// For e.g. 90.88 will pay Rs. 90.88.
-  final String amount;
+  final double amount;
 
   Map<String, String?> toMap() {
     return {
@@ -42,7 +42,7 @@ class EasyUpiPaymentModel {
       'transactionId': transactionId ?? DateTime.now().microsecondsSinceEpoch.toString(),
       'transactionRefId': transactionRefId ?? DateTime.now().millisecondsSinceEpoch.toString(),
       'description': description,
-      'amount': amount,
+      'amount': amount.toString(),
     };
   }
 }
