@@ -13,6 +13,12 @@
 
 A new flutter plugin to make upi payment easily (only on Android).
 
+# Screenshot
+
+[Download Easy Upi Payment Apk](https://github.com/GJJ2019/easy_upi_payment/raw/main/example/assets/app-release.apk)
+
+<img src="example/assets/1.png" height="500em" /><img src="example/assets/2.png" height="500em" /><img src="example/assets/3.png" height="500em" />
+
 # System requirements
 
 - Flutter: >= 2.5.0
