@@ -1,6 +1,6 @@
 # Easy Upi Payment Example
 
-A beautiful payment app using easy_upi_payment plugin
+A beautiful payment app using easy_upi_payment plugin. [Download Easy Upi Payment Apk](assets/app-release.apk).
 
 ## Features
 
