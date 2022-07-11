@@ -58,4 +58,14 @@ class TransactionDetailModel {
   String toString() {
     return 'TransactionDetailModel(transactionId: $transactionId, responseCode: $responseCode, approvalRefNo: $approvalRefNo, transactionRefId: $transactionRefId, amount: $amount)';
   }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'transactionId': transactionId,
+      'responseCode': responseCode,
+      'approvalRefNo': approvalRefNo,
+      'transactionRefId': transactionRefId,
+      'amount': amount,
+    };
+  }
 }

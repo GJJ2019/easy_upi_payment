@@ -1,5 +1,5 @@
 class EasyUpiPaymentModel {
-  EasyUpiPaymentModel({
+  const EasyUpiPaymentModel({
     required this.payeeVpa,
     required this.payeeName,
     required this.amount,
