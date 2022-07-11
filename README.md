@@ -5,9 +5,6 @@
   <a href="https://pub.dev/packages/easy_upi_payment">
     <img src="https://img.shields.io/pub/v/easy_upi_payment?color=blue" alt="pub.dev version">
   </a>
-  <a href="https://pub.dev/packages/easy_upi_payment">
-    <img src="https://img.shields.io/badge/platforms-android%20|%20ios-lightgrey.svg" alt="Platform support">
-  </a>
   <a href="https://twitter.com/gjj2019">
     <img src="https://img.shields.io/badge/twitter-@GJJ2019-blue.svg?style=flat" alt="Twitter">
   </a>
