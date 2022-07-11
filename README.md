@@ -11,13 +11,13 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
-A new flutter plugin to make upi payment easily (only on Android).
+A new flutter plugin to make upi payment with ease currently only supported by Android (only for India).
 
 # Screenshot
 
 [Download Easy Upi Payment Apk](https://github.com/GJJ2019/easy_upi_payment/raw/main/example/assets/app-release.apk)
 
-<img src="example/assets/1.png" height="500em" /><img src="example/assets/2.png" height="500em" /><img src="example/assets/3.png" height="500em" /><img src="example/assets/4.jpeg" height="500em" />
+<img src="https://github.com/GJJ2019/easy_upi_payment/blob/main/example/assets/1.png?raw=true" height="500em" /><img src="https://github.com/GJJ2019/easy_upi_payment/blob/main/example/assets/2.png?raw=true" height="500em" /><img src="https://github.com/GJJ2019/easy_upi_payment/blob/main/example/assets/3.png?raw=true" height="500em" /><img src="https://github.com/GJJ2019/easy_upi_payment/blob/main/example/assets/4.jpeg?raw=true" height="500em" />
 
 # System requirements
 
