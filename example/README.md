@@ -16,9 +16,7 @@ Note: This project uses teddy which is present in [Flare-Flutter](https://github
 
 ## Screenshots
 
-<img src="assets/1.png" height="500em" />
-<img src="assets/2.png" height="500em" />
-<img src="assets/3.png" height="500em" />
+<img src="assets/1.png" height="500em" /><img src="assets/2.png" height="500em" /><img src="assets/3.png" height="500em" />
 
 ## Packages used
 
