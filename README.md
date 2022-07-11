@@ -13,13 +13,13 @@
 
 A new flutter plugin to make upi payment easily (only on Android).
 
-## System requirements
+# System requirements
 
 - Flutter: >= 2.5.0
 - Dart: >=2.17.5 <3.0.0
 - Android: min sdk 19
 
-## Getting started
+# Getting started
 
 Add the plugin package to the `pubspec.yaml` file in your project:
 
@@ -47,7 +47,7 @@ now go to `android/app/build.gradle` & add following lines
     }
 ```
 
-### Usage
+# Usage
 
 ```dart
     final res = await EasyUpiPaymentPlatform.instance.startPayment(
@@ -67,6 +67,8 @@ now go to `android/app/build.gradle` & add following lines
 ```
 
 for more details see [example](https://github.com/GJJ2019/easy_upi_payment/tree/main/example)
+
+### Note: its uses third party android package [EasyUpiPayment-Android](https://github.com/PatilShreyas/EasyUpiPayment-Android)
 
 # License
 
