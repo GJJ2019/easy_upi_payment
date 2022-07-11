@@ -15,7 +15,8 @@ void main() {
     when(mockPlatform.startPayment(fakeEasyUpiPaymentModel)).thenAnswer(
       (_) => Future.value(fakeTransactionDetailsModel),
     );
-    expect(await mockPlatform.startPayment(fakeEasyUpiPaymentModel), fakeTransactionDetailsModel);
+    expect(await mockPlatform.startPayment(fakeEasyUpiPaymentModel),
+        fakeTransactionDetailsModel);
   });
 
   test('startPayment with cancelled Exception', () async {

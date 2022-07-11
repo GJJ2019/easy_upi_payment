@@ -41,7 +41,8 @@ class MainStateNotifier extends StateNotifier<MainState> {
   }
 }
 
-final mainStateProvider = StateNotifierProvider.autoDispose<MainStateNotifier, MainState>(
+final mainStateProvider =
+    StateNotifierProvider.autoDispose<MainStateNotifier, MainState>(
   (ref) {
     return MainStateNotifier(ref);
   },

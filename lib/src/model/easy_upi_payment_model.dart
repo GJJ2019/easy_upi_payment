@@ -39,8 +39,10 @@ class EasyUpiPaymentModel {
       'payeeVpa': payeeVpa,
       'payeeName': payeeName,
       'payeeMerchantCode': payeeMerchantCode ?? '',
-      'transactionId': transactionId ?? DateTime.now().microsecondsSinceEpoch.toString(),
-      'transactionRefId': transactionRefId ?? DateTime.now().millisecondsSinceEpoch.toString(),
+      'transactionId':
+          transactionId ?? DateTime.now().microsecondsSinceEpoch.toString(),
+      'transactionRefId':
+          transactionRefId ?? DateTime.now().millisecondsSinceEpoch.toString(),
       'description': description,
       'amount': amount.toString(),
     };

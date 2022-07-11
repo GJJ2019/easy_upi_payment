@@ -15,10 +15,14 @@ class MainView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appStorage = ref.read(appStorageProvider);
-    final payeeVpaController = useTextEditingController(text: appStorage.getUpiId());
-    final payeeNameController = useTextEditingController(text: appStorage.getName());
-    final amountController = useTextEditingController(text: appStorage.getAmount());
-    final descriptionController = useTextEditingController(text: appStorage.getDescription());
+    final payeeVpaController =
+        useTextEditingController(text: appStorage.getUpiId());
+    final payeeNameController =
+        useTextEditingController(text: appStorage.getName());
+    final amountController =
+        useTextEditingController(text: appStorage.getAmount());
+    final descriptionController =
+        useTextEditingController(text: appStorage.getDescription());
 
     final formKeyRef = useRef(GlobalKey<FormState>());
 
@@ -30,7 +34,8 @@ class MainView extends HookConsumerWidget {
           case MainState.loading:
             break;
           case MainState.success:
-            final model = ref.read(mainStateProvider.notifier).transactionDetailModel;
+            final model =
+                ref.read(mainStateProvider.notifier).transactionDetailModel;
             showDialog<void>(
               context: context,
               builder: (BuildContext context) => AlertDialog(
@@ -168,7 +173,9 @@ class MainView extends HookConsumerWidget {
                   ),
                   keyboardType: TextInputType.name,
                   validator: (value) {
-                    if (value == null || value.isEmpty || !value.contains('@')) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        !value.contains('@')) {
                       return 'Please enter valid Vpa Id';
                     }
                     return null;
@@ -233,7 +240,8 @@ class MainView extends HookConsumerWidget {
                       }
                     },
                     style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(const Size.fromHeight(42)),
+                      fixedSize:
+                          MaterialStateProperty.all(const Size.fromHeight(42)),
                     ),
                     child: const Text('Pay Now'),
                   ),
