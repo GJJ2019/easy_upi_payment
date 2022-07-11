@@ -1,28 +1,76 @@
 import 'package:easy_upi_payment/easy_upi_payment.dart';
-import 'package:easy_upi_payment/src/easy_upi_payment_method_channel.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 
+import 'easy_upi_payment_test.mocks.dart';
 import 'fake_data.dart';
 
-class MockEasyUpiPaymentPlatform with MockPlatformInterfaceMixin implements EasyUpiPaymentPlatform {
-  @override
-  Future<TransactionDetailModel?> startPayment(EasyUpiPaymentModel easyUpiPaymentModel) {
-    return Future.value(fakeTransactionDetailsModel);
-  }
-}
-
+@GenerateMocks([EasyUpiPaymentPlatform])
 void main() {
-  final EasyUpiPaymentPlatform initialPlatform = EasyUpiPaymentPlatform.instance;
-
-  test('$MethodChannelEasyUpiPayment is the default instance', () {
-    expect(initialPlatform, isInstanceOf<MethodChannelEasyUpiPayment>());
-  });
+  final mockPlatform = MockEasyUpiPaymentPlatform();
 
   test('startPayment', () async {
-    final MockEasyUpiPaymentPlatform fakePlatform = MockEasyUpiPaymentPlatform();
-    EasyUpiPaymentPlatform.instance = fakePlatform;
+    when(mockPlatform.startPayment(fakeEasyUpiPaymentModel)).thenAnswer(
+      (_) => Future.value(fakeTransactionDetailsModel),
+    );
+    expect(await mockPlatform.startPayment(fakeEasyUpiPaymentModel), fakeTransactionDetailsModel);
+  });
 
-    expect(await fakePlatform.startPayment(fakeEasyUpiPaymentModel), fakeTransactionDetailsModel);
+  test('startPayment with cancelled Exception', () async {
+    when(mockPlatform.startPayment(fakeEasyUpiPaymentModel)).thenThrow(
+      EasyUpiPaymentException.fromException(
+        PlatformException(
+          code: EasyUpiPaymentExceptionType.cancelledException.toString(),
+        ),
+      ),
+    );
+    expect(
+      () => mockPlatform.startPayment(fakeEasyUpiPaymentModel),
+      throwsA(isA<EasyUpiPaymentException>()),
+    );
+  });
+
+  test('startPayment with failed Exception', () async {
+    when(mockPlatform.startPayment(fakeEasyUpiPaymentModel)).thenThrow(
+      EasyUpiPaymentException.fromException(
+        PlatformException(
+          code: EasyUpiPaymentExceptionType.failedException.toString(),
+        ),
+      ),
+    );
+    expect(
+      () => mockPlatform.startPayment(fakeEasyUpiPaymentModel),
+      throwsA(isA<EasyUpiPaymentException>()),
+    );
+  });
+
+  test('startPayment with submitted Exception', () async {
+    when(mockPlatform.startPayment(fakeEasyUpiPaymentModel)).thenThrow(
+      EasyUpiPaymentException.fromException(
+        PlatformException(
+          code: EasyUpiPaymentExceptionType.submittedException.toString(),
+        ),
+      ),
+    );
+    expect(
+      () => mockPlatform.startPayment(fakeEasyUpiPaymentModel),
+      throwsA(isA<EasyUpiPaymentException>()),
+    );
+  });
+
+  test('startPayment with unknown Exception', () async {
+    when(mockPlatform.startPayment(fakeEasyUpiPaymentModel)).thenThrow(
+      EasyUpiPaymentException.fromException(
+        PlatformException(
+          code: EasyUpiPaymentExceptionType.unknownException.toString(),
+        ),
+      ),
+    );
+    expect(
+      () => mockPlatform.startPayment(fakeEasyUpiPaymentModel),
+      throwsA(isA<EasyUpiPaymentException>()),
+    );
   });
 }
