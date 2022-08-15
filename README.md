@@ -22,7 +22,7 @@ A new flutter plugin to make upi payment with ease currently only supported by A
 # System requirements
 
 - Flutter: >= 2.5.0
-- Dart: >=2.17.5 <3.0.0
+- Dart: ">=2.17.6 <3.0.0"
 - Android: min sdk 19
 
 # Getting started

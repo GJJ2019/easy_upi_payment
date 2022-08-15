@@ -23,14 +23,17 @@ void main() {
     });
 
     test('startPayment', () async {
-      expect(await platform.startPayment(fakeEasyUpiPaymentModel),
-          fakeTransactionDetailsModel);
+      expect(
+        await platform.startPayment(fakeEasyUpiPaymentModel),
+        fakeTransactionDetailsModel,
+      );
     });
   });
 
   group('startPayment with exception', () {
     final platformException = PlatformException(
-        code: EasyUpiPaymentExceptionType.failedException.toString());
+      code: EasyUpiPaymentExceptionType.failedException.toString(),
+    );
     setUp(() {
       channel.setMockMethodCallHandler((MethodCall methodCall) async {
         return platformException;
