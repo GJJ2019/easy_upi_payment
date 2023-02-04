@@ -8,7 +8,7 @@ import '../providers/main_providers.dart';
 
 class MainView extends HookConsumerWidget {
   /// TODO add your comment here
-  const MainView({Key? key}) : super(key: key);
+  const MainView({super.key});
 
   static const routeName = '/main';
 

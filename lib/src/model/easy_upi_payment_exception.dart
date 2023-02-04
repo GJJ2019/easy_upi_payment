@@ -26,6 +26,9 @@ class EasyUpiPaymentException implements Exception {
       case 'Submitted':
         type = EasyUpiPaymentExceptionType.submittedException;
         break;
+      case 'App Not Found Exception':
+        type = EasyUpiPaymentExceptionType.appNotFoundException;
+        break;
       default:
         type = EasyUpiPaymentExceptionType.unknownException;
         break;
@@ -49,6 +52,9 @@ enum EasyUpiPaymentExceptionType {
 
   /// Transaction is in PENDING state. Money might get deducted from user’s account but not yet deposited in payee’s account.
   submittedException,
+
+  /// Transaction is in PENDING state. Money might get deducted from user’s account but not yet deposited in payee’s account.
+  appNotFoundException,
 
   /// when unknown exception occurs
   unknownException,

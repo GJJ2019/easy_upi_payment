@@ -1,8 +1,10 @@
 package com.pcu.easy_upi_payment
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import androidx.annotation.NonNull
 import dev.shreyaspatil.easyupipayment.EasyUpiPayment
+import dev.shreyaspatil.easyupipayment.exception.AppNotFoundException
 import dev.shreyaspatil.easyupipayment.listener.PaymentStatusListener
 import dev.shreyaspatil.easyupipayment.model.TransactionDetails
 import dev.shreyaspatil.easyupipayment.model.TransactionStatus
@@ -44,9 +46,16 @@ class EasyUpiPaymentPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Pay
         this.amount = call.argument<String>("amount")
       }
 
-      easyUpiPayment?.setPaymentStatusListener(this);
-      easyUpiPayment?.startPayment()
-
+      try {
+        easyUpiPayment?.startPayment()
+        easyUpiPayment?.setPaymentStatusListener(this);
+      } catch (e: Exception) {
+        result.error(
+          "App Not Found Exception",
+          "app not found",
+          "Looks like there is not app to proceed the transaction"
+        )
+      }
     } else {
       result.notImplemented()
     }
@@ -100,4 +109,5 @@ class EasyUpiPaymentPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Pay
     }
     easyUpiPayment?.removePaymentStatusListener();
   }
+
 }
