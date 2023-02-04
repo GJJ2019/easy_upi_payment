@@ -1,3 +1,8 @@
+## 0.1.3
+
+- updating packages to latest
+- compatible with flutter 3.7
+
 ## 0.1.2
 
 - updating dart sdk to support latest version ">=2.17.6 <3.0.0"
