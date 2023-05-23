@@ -12,15 +12,22 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   tearDown(() {
-    channel.setMockMethodCallHandler(null);
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, null);
   });
 
   group('startPayment with appropriate result', () {
-    setUp(() {
-      channel.setMockMethodCallHandler((MethodCall methodCall) async {
-        return fakeTransactionDetailsModel.toMap();
-      });
-    });
+    setUp(
+      () {
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(
+          channel,
+          (MethodCall methodCall) async {
+            return fakeTransactionDetailsModel.toMap();
+          },
+        );
+      },
+    );
 
     test('startPayment', () async {
       expect(
@@ -34,11 +41,17 @@ void main() {
     final platformException = PlatformException(
       code: EasyUpiPaymentExceptionType.failedException.toString(),
     );
-    setUp(() {
-      channel.setMockMethodCallHandler((MethodCall methodCall) async {
-        return platformException;
-      });
-    });
+    setUp(
+      () {
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(
+          channel,
+          (MethodCall methodCall) async {
+            return platformException;
+          },
+        );
+      },
+    );
 
     test('startPayment', () async {
       expect(
