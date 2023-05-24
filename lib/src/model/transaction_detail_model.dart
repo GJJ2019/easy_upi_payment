@@ -10,28 +10,28 @@ class TransactionDetailModel {
 
   factory TransactionDetailModel.fromMap(Map data) {
     return TransactionDetailModel(
-      transactionId: data['transactionId'] as String,
-      responseCode: data['responseCode'] as String,
-      approvalRefNo: data['approvalRefNo'] as String,
-      transactionRefId: data['transactionRefId'] as String,
-      amount: data['amount'] as String,
+      transactionId: data['transactionId'] as dynamic,
+      responseCode: data['responseCode'] as dynamic,
+      approvalRefNo: data['approvalRefNo'] as dynamic,
+      transactionRefId: data['transactionRefId'] as dynamic,
+      amount: data['amount'] as dynamic,
     );
   }
 
   /// Returns Transaction ID
-  final String transactionId;
+  final dynamic transactionId;
 
   /// Returns UPI Response Code
-  final String responseCode;
+  final dynamic responseCode;
 
   /// Returns UPI Approval Reference Number (beneficiary)
-  final String approvalRefNo;
+  final dynamic approvalRefNo;
 
   /// Returns Transaction reference ID passed in input
-  final String transactionRefId;
+  final dynamic transactionRefId;
 
   /// Returns Transaction amount
-  final String amount;
+  final dynamic amount;
 
   @override
   bool operator ==(Object other) {
@@ -55,12 +55,12 @@ class TransactionDetailModel {
   }
 
   @override
-  String toString() {
+  dynamic todynamic() {
     return 'TransactionDetailModel(transactionId: $transactionId, responseCode: $responseCode, approvalRefNo: $approvalRefNo, transactionRefId: $transactionRefId, amount: $amount)';
   }
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+  Map<dynamic, dynamic> toMap() {
+    return <dynamic, dynamic>{
       'transactionId': transactionId,
       'responseCode': responseCode,
       'approvalRefNo': approvalRefNo,
