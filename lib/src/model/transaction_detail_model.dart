@@ -19,19 +19,19 @@ class TransactionDetailModel {
   }
 
   /// Returns Transaction ID
-  final String transactionId;
+  final String? transactionId;
 
   /// Returns UPI Response Code
-  final String responseCode;
+  final String? responseCode;
 
   /// Returns UPI Approval Reference Number (beneficiary)
-  final String approvalRefNo;
+  final String? approvalRefNo;
 
   /// Returns Transaction reference ID passed in input
-  final String transactionRefId;
+  final String? transactionRefId;
 
   /// Returns Transaction amount
-  final String amount;
+  final String? amount;
 
   @override
   bool operator ==(Object other) {

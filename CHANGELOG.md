@@ -1,3 +1,7 @@
+## 0.1.4
+
+- updating packages to latest
+- fixing #16 #13
 ## 0.1.3
 
 - updating packages to latest
