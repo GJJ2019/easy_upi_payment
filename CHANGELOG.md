@@ -1,3 +1,7 @@
+## 0.1.5
+
+- fixing #23
+- changing transaction_details_model
 ## 0.1.4
 
 - updating packages to latest

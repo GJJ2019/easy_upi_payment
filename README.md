@@ -31,7 +31,7 @@ Add the plugin package to the `pubspec.yaml` file in your project:
 
 ```yaml
 dependencies:
-  easy_upi_payment: ^0.1.0
+  easy_upi_payment: ^0.1.5
 ```
 
 Install the new dependency:

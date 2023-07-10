@@ -10,11 +10,11 @@ class TransactionDetailModel {
 
   factory TransactionDetailModel.fromMap(Map data) {
     return TransactionDetailModel(
-      transactionId: data['transactionId'] as String,
-      responseCode: data['responseCode'] as String,
-      approvalRefNo: data['approvalRefNo'] as String,
-      transactionRefId: data['transactionRefId'] as String,
-      amount: data['amount'] as String,
+      transactionId: data['transactionId'] as String?,
+      responseCode: data['responseCode'] as String?,
+      approvalRefNo: data['approvalRefNo'] as String?,
+      transactionRefId: data['transactionRefId'] as String?,
+      amount: data['amount'] as String?,
     );
   }
 
