@@ -15,14 +15,18 @@ class MainView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appStorage = ref.read(appStorageProvider);
-    final payeeVpaController =
-        useTextEditingController(text: appStorage.getUpiId());
-    final payeeNameController =
-        useTextEditingController(text: appStorage.getName());
-    final amountController =
-        useTextEditingController(text: appStorage.getAmount());
-    final descriptionController =
-        useTextEditingController(text: appStorage.getDescription());
+    final payeeVpaController = useTextEditingController(
+      text: appStorage.getUpiId() ?? "gaurav.jajoo@upi",
+    );
+    final payeeNameController = useTextEditingController(
+      text: appStorage.getName() ?? "Gaurav Jajoo",
+    );
+    final amountController = useTextEditingController(
+      text: appStorage.getAmount() ?? "10",
+    );
+    final descriptionController = useTextEditingController(
+      text: appStorage.getDescription() ?? "Easy upi payment",
+    );
 
     final formKeyRef = useRef(GlobalKey<FormState>());
 
