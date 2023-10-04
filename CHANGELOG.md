@@ -1,3 +1,6 @@
+## 0.1.6
+- update deps
+
 ## 0.1.5
 
 - fixing #23

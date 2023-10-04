@@ -1,6 +1,6 @@
 name: easy_upi_payment
 description: A new flutter plugin to make upi payment with ease currently only supported by Android (only for India).
-version: 0.1.5
+version: 0.1.6
 repository: https://github.com/GJJ2019/easy_upi_payment
 issue_tracker: https://github.com/GJJ2019/easy_upi_payment/issues
 homepage: https://github.com/GJJ2019/easy_upi_payment
